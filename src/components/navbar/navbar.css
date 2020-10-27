@@ -1,0 +1,41 @@
+.header {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #000000;
+}
+
+.brand-logo {
+    padding: 0 1rem;
+}
+
+.brand-logo a {
+    color: white;
+    text-decoration: none;    
+}
+
+.nav {
+    height: 100%;
+    width: 100%;
+    padding: 0 1rem;
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-start;
+    margin: 0;
+    padding: 0;
+}
+
+.nav li {
+    background-color: #8cacea;
+    margin: 1rem;
+}
+
+.nav li:last-child {
+    margin-left: auto;
+}

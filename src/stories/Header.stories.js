@@ -1,18 +1,29 @@
-import React from 'react';
+import React from 'react'
+import Navbar from '../components/navbar'
 
-import { Header } from './Header';
+const ITEMS = [
+  {
+    url: 'www.georgegelinas.com/about',
+    name: 'About'
+  },
+  {
+    url: 'www.georgegelinas.com/resume',
+    name: 'R\xE9sum\xE9'
+  },
+  {
+    url: 'www.georgegelinas.com/contact',
+    name: 'Contact'
+  }
+]
 
 export default {
   title: 'Example/Header',
-  component: Header,
-};
+  component: Navbar
+}
 
-const Template = (args) => <Header {...args} />;
+const Template = () => <Navbar items={ITEMS} />
 
-export const LoggedIn = Template.bind({});
-LoggedIn.args = {
-  user: {},
-};
+export const LoggedIn = Template.bind()
 
-export const LoggedOut = Template.bind({});
-LoggedOut.args = {};
+// export const LoggedOut = Template.bind({});
+// LoggedOut.args = {};
