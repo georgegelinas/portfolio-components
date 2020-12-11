@@ -11,26 +11,32 @@ import PropTypes from 'prop-types'
 import cx from 'classnames'
 import './navbar.css'
 
-const Navbar = ({ items }) => {
+const Navbar = ({ logo, items }) => {
   return (
     <header className={cx('header')}>
-      <h1 className='brand-logo'>
-        <a href='/'>LOGO</a>
-      </h1>
       <nav className='nav'>
-        <ul>
-          {items.map((item) => (
-            <li key={item.name}>
-              <a href={item.url}>{item.name}</a>
-            </li>
-          ))}
-        </ul>
+        <div className='brand-logo'>
+          <a href='/'>
+            <img src={logo} alt='Logo' />
+          </a>
+        </div>
+        <div className='spacer' />
+        <div className='nav-items'>
+          <ul>
+            {items.map((item) => (
+              <li key={item.name}>
+                <a href={item.url}>{item.name}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
       </nav>
     </header>
   )
 }
 
 Navbar.propTypes = {
+  logo: PropTypes.string,
   items: PropTypes.arrayOf(
     PropTypes.shape({
       url: PropTypes.string,

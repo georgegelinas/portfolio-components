@@ -1,5 +1,6 @@
 import React from 'react'
 import Navbar from '../components/navbar'
+import gLogo from './assets/gLogo.svg'
 
 const ITEMS = [
   {
@@ -21,9 +22,6 @@ export default {
   component: Navbar
 }
 
-const Template = () => <Navbar items={ITEMS} />
+const Template = () => <Navbar logo={gLogo} items={ITEMS} />
 
 export const LoggedIn = Template.bind()
-
-// export const LoggedOut = Template.bind({});
-// LoggedOut.args = {};
