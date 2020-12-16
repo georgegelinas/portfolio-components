@@ -6,32 +6,47 @@
  * author: George Gelinas <gelinas.george@gmail.com>
  */
 
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 import './navbar.css'
 
-const Navbar = ({ logo, items }) => {
+const Navbar = ({ logo, items, isMobile }) => {
+  const [isDrawerOpen, setDrawerToggle] = useState(false)
   return (
-    <header className={cx('header')}>
-      <nav className='nav'>
+    <>
+      <header className='header'>
         <div className='brand-logo'>
-          <a href='/'>
+          <a href='#'>
             <img src={logo} alt='Logo' />
           </a>
         </div>
-        <div className='spacer' />
-        <div className='nav-items'>
-          <ul>
-            {items.map((item) => (
-              <li key={item.name}>
-                <a href={item.url}>{item.name}</a>
-              </li>
-            ))}
-          </ul>
+      </header>
+      {isMobile && (
+        <div className='hamburger-menu'>
+          <button
+            onChange={() => setDrawerToggle(!isDrawerOpen)}
+            className='hamburger-menu-cta'
+          >
+            {/* save the svg as its own file */}
+            <svg viewBox='0 0 100 80' width='40' height='40'>
+              <rect width='100' height='20' />
+              <rect y='30' width='100' height='20' />
+              <rect y='60' width='100' height='20' />
+            </svg>
+          </button>
         </div>
+      )}
+      <nav className={isMobile ? 'side-drawer' : 'nav'}>
+        <ul>
+          {items.map((item) => (
+            <li key={item.name}>
+              <a href={item.url}>{item.name}</a>
+            </li>
+          ))}
+        </ul>
       </nav>
-    </header>
+    </>
   )
 }
 
@@ -42,11 +57,14 @@ Navbar.propTypes = {
       url: PropTypes.string,
       name: PropTypes.string
     })
-  )
+  ),
+  isMobile: PropTypes.bool
 }
 
 Navbar.defaultProps = {
-  items: []
+  logo: '',
+  items: [],
+  isMobile: true
 }
 
 export default Navbar
