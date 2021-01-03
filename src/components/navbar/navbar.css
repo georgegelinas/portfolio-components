@@ -49,11 +49,11 @@
 
 .side-drawer {
     height: 100%;
-    background: white;
+    background: #000000a9;
     box-shadow: 2px 0px 5px rgba(0,0,0,0.5);
     position: fixed;
     top: 0;
-    left: 0;
+    right: 0;
     width: 70%;
     display: flex;
     justify-content: flex-end;
@@ -63,12 +63,21 @@
 
 .side-drawer ul {
     list-style: none;
+    width: 100%;
+    padding: 80px 0 0 0;
     display: flex;
     flex-direction: column;
+    align-items: center;
+}
+
+.side-drawer li {
+    padding: 0 0 1rem;
 }
 
 .side-drawer a {
     text-decoration: none;
+    color: white;
+    font-family: sans-serif;
 }
 
 .nav a {

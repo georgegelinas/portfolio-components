@@ -8,7 +8,6 @@
 
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
-import cx from 'classnames'
 import './navbar.css'
 
 const Navbar = ({ logo, items, isMobile }) => {
@@ -64,7 +63,7 @@ Navbar.propTypes = {
 Navbar.defaultProps = {
   logo: '',
   items: [],
-  isMobile: true
+  isMobile: false
 }
 
 export default Navbar
