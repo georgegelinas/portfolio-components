@@ -1,0 +1,35 @@
+.footer {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(34, 33, 33, 0.616);
+    color: white;
+    text-align: center;
+}
+
+.footer-socials {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    justify-content: space-evenly;
+}
+
+.footer-socials a {
+    color: white;
+}
+
+.footer-navs {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    justify-content: space-evenly;
+}
+
+.footer-navs a {
+    color: white;
+    text-decoration: none;
+    font-family: sans-serif;
+}
